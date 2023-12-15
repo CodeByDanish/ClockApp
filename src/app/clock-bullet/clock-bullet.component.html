@@ -1,0 +1,29 @@
+
+
+<div class="container">
+    <mat-card class="card">
+      <mat-card-header>
+        <mat-card-title>
+          Clock Bullet App
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="clock">
+          <div class="analog-clock">
+            <div class="center">{{ totalMonths }}<br> <span>Months</span></div>
+            <div class="bullet" [style.transform]="getBulletTransform()"></div>
+          </div>
+          <p>Current Time: {{ currentDate | date: 'shortTime' }}</p>
+          <p>Current Date: {{ currentDate | date: 'longDate' }}</p>
+        </div>
+        <div class="buttons">
+          <button mat-raised-button color="primary" (click)="moveBullet(false)">
+            Move Backward
+          </button>
+          <button mat-raised-button color="primary" (click)="moveBullet(true)">
+            Move Forward
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
